@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<PreserveCompilationContext>true</PreserveCompilationContext>
+		<AssemblyName>app</AssemblyName>
+		<OutputType>Exe</OutputType>
+		<PackageId>app</PackageId>
+		<RazorCompileOnBuild>false</RazorCompileOnBuild>
+		<RazorCompileOnPublish>false</RazorCompileOnPublish>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<SatelliteResourceLanguages>true</SatelliteResourceLanguages>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>CS8632</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Startup.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="IGeekFan.AspNetCore.Knife4jUI" Version="0.0.16" />
+		<PackageReference Include="SqlSugarCore" Version="5.1.4.154" />
+		<PackageReference Include="SqlSugarCore.MySqlConnector" Version="5.1.4.92" />
+		<PackageReference Include="Wlniao.XCenter" Version="8.0.23" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="xcore\xcore.config;data\**\*">
+			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Dockerfile">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="Wlniao.XCore.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+	<ProjectExtensions>
+		<VisualStudio>
+			<UserProperties properties_4launchsettings_1json__JsonSchema="" />
+		</VisualStudio>
+	</ProjectExtensions>
+
+</Project>

@@ -1,0 +1,17 @@
+﻿.Archive
+.vs
+*.dg
+*.log
+*.suo
+*.user
+/*/obj
+/*/bin
+/*/Properties
+/*/node_modules
+/*/package-lock.json
+/*/*/dist
+/*/*/node_modules
+/*/*/package-lock.json
+/*/Migrations
+/*/webroot
+*.DS_Store
