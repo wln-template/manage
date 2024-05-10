@@ -14,11 +14,11 @@ builder.Logging.ClearProviders();
 builder.WebHost.UseKestrel(o => { o.ListenAnyIP(XCore.ListenPort); o.AllowSynchronousIO = true; });
 builder.Services.AddRouting(o => { o.LowercaseUrls = true; });
 builder.Services.AddControllers();
-builder.Services.AddSwaggerExtend().AddRazorPages().AddRazorRuntimeCompilation();
-//builder.Services.AddSwaggerExtend(new System.Collections.Generic.List<ApiGroupInfo> {
-//    new ApiGroupInfo { Name = "Service", Title = "对外开放服务接口" },
-//    new ApiGroupInfo { Name = "Manager", Title = "内部管理服务接口" }
-//});
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+builder.Services.AddSwaggerExtend(new System.Collections.Generic.List<ApiGroupInfo> {
+    new ApiGroupInfo { Name = "Service", Title = "对外开放服务接口" },
+    new ApiGroupInfo { Name = "Manager", Title = "内部管理服务接口" }
+});
 Wlniao.Log.Loger.Console("Now listening on: http://127.0.0.1:" + XCore.ListenPort, ConsoleColor.DarkGreen);
 XCore.CloseServerCertificateValidation();
 DbConnectInfo.WLN_CONNSTR_MYSQL.IsNullOrEmpty();
